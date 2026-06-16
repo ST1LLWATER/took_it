@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Single hero capsule: centered, rotated -45 (perfect rotational symmetry) -->
+    <group
+        android:name="capsule"
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="-45">
+
+        <!-- Soft drop shadow for elevation -->
+        <path
+            android:fillColor="#33000000"
+            android:pathData="M36,45 H72 A12,12 0 0 1 72,69 H36 A12,12 0 0 1 36,45 Z" />
+
+        <!-- Capsule body with gentle top-to-bottom shading -->
+        <path android:pathData="M36,42 H72 A12,12 0 0 1 72,66 H36 A12,12 0 0 1 36,42 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="54" android:startY="42"
+                    android:endX="54" android:endY="66">
+                    <item android:color="#FFFFFFFF" android:offset="0.0" />
+                    <item android:color="#FFE8F1E9" android:offset="1.0" />
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- Subtle two-tone join: right end slightly tinted -->
+        <path
+            android:fillColor="#FFF1F8E9"
+            android:pathData="M54,42 H72 A12,12 0 0 1 72,66 H54 Z" />
+
+        <!-- Center seam -->
+        <path
+            android:strokeColor="#26000000"
+            android:strokeWidth="1.4"
+            android:pathData="M54,42 V66" />
+
+        <!-- Specular highlight along the top edge -->
+        <path
+            android:fillColor="#73FFFFFF"
+            android:pathData="M42,46 H66 A2.4,2.4 0 0 1 66,50.8 H42 A2.4,2.4 0 0 1 42,46 Z" />
+    </group>
+</vector>
